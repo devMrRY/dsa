@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <style>
+        html, body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 100%;
+            height: 90vh;
+            overflow: hidden;
+            display: flex;
+            /* justify-content: center; */
+        }
+        .container img{
+            min-width: 100%;
+            height: 100%;
+            animation-name: swipe;
+            animation-duration: 12s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes swipe {
+            0% {
+                transform: translateX(0%);
+            }
+            25% {
+                transform: translateX(-100%);
+            }
+            50% {
+                transform: translateX(-200%);
+            }
+            75% {
+                transform: translateX(-300%);
+            }
+            100% {
+                transform: translateX(0%);
+            }
+        }
+        
+    </style>
+</head>
+<body onload="loadImage()">
+    <div class="container">
+        <img id="activeImg" src="https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ" alt="alt-img" />
+        <img id="activeImg" src="https://i.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68" alt="alt-img" />
+        <img id="activeImg" src="https://i.picsum.photos/id/1000/5626/3635.jpg?hmac=qWh065Fr_M8Oa3sNsdDL8ngWXv2Jb-EE49ZIn6c0P-g" alt="alt-img" />
+        <img id="activeImg" src="https://i.picsum.photos/id/1003/1181/1772.jpg?hmac=oN9fHMXiqe9Zq2RM6XT-RVZkojgPnECWwyEF1RvvTZk" alt="alt-img" />
+    </div>
+    <script>
+        let imgArr = [
+            "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ",
+            "https://i.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68",
+            "https://i.picsum.photos/id/1000/5626/3635.jpg?hmac=qWh065Fr_M8Oa3sNsdDL8ngWXv2Jb-EE49ZIn6c0P-g",
+            "https://i.picsum.photos/id/1003/1181/1772.jpg?hmac=oN9fHMXiqe9Zq2RM6XT-RVZkojgPnECWwyEF1RvvTZk"
+        ]
+        function loadImage() {
+            // let imgNode = document.getElementById("activeImg");
+            // let curr = 0;
+            // imgNode.src = imgArr[curr];
+            // setInterval(() => {
+            //     curr = (curr + 1) % imgArr.length;
+            //     imgNode.src = imgArr[curr];
+            // }, 3000)
+        }
+    </script>
+</body>
+</html>
